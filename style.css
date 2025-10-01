@@ -1,0 +1,154 @@
+/* ========== Root / Utilities ========== */
+:root {
+  --brand-aqua: #00c2ff;
+  --brand-blue: #0d6efd;
+  --text-shadow-soft: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ========== Navbar / Dropdown ========== */
+.dropdown-skill .dropdown-item {
+  color: #fff;
+  text-shadow: var(--text-shadow-soft);
+  background-image: linear-gradient(to bottom, rgb(0,140,255), rgb(0,255,251));
+}
+.dropdown-skill .dropdown-item:hover { filter: brightness(0.95); }
+.dropdown-divider { border-color: rgba(0,0,0,0.2); }
+
+/* ========== Hero / Carousel moving block ========== */
+.move{
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: left;
+  font-size: clamp(1rem, 1.1vw + 0.8rem, 1.25rem);
+  padding: 24px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .move { grid-template-columns: 1fr 1.25fr; padding: 32px; gap: 1.5rem; }
+}
+
+.mvimg{
+  max-width: 460px;
+  max-height: 480px;
+  margin: 0 auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.mvtxt{
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mvp{ color: rgb(10,132,255); }
+
+/* ========== Skills ========== */
+.Products{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media (min-width: 576px) { .Products { grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 992px) { .Products { grid-template-columns: repeat(3,1fr); } }
+
+.Products img{ padding: 20px; }
+
+.proitem{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 16px;
+  background-image: linear-gradient(to right, rgb(0,140,255), rgb(0,255,251));
+  align-items: center;
+  overflow: hidden;
+}
+.proitem h1,
+.proitem h3{
+  color: #000;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+  font-family: "Times New Roman", Times, serif;
+  padding: 20px;
+  text-align: justify;
+  margin: 0;
+}
+
+/* ========== Global Type / Buttons ========== */
+.h1{
+  text-shadow: 2px 2px 4px rgb(4,201,255); 
+  text-transform: capitalize;
+  font-size: clamp(1.75rem, 3.2vw + 1rem, 3rem);
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(2,56,174);
+}
+
+.btn{
+  background-color: rgb(0,183,255);
+  color: #fff;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px 16px;
+  box-shadow:
+    rgb(0,255,255) 3px 3px 6px 0px inset,
+    rgb(0,255,30) -3px -3px 6px 1px inset;
+  border: 0;
+}
+.btn:hover { filter: brightness(0.98); }
+
+/* Variants used in HTML */
+.btn-outline-aqua { border-color: var(--brand-aqua); color: var(--brand-aqua); background: transparent; }
+.btn-outline-aqua:hover { background: var(--brand-aqua); color: #fff; }
+.btn-panda{ background: var(--brand-blue); color: #fff; border: 0; }
+.btn-panda:hover{ filter: brightness(0.95); }
+
+/* ========== Info Cards (About / Contact) ========== */
+.info-card{
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #00ccff;
+  border-radius: 10px;
+  text-shadow: var(--text-shadow-soft);
+  background: linear-gradient(135deg, rgba(0,140,255,0.9), rgba(0,255,251,0.9));
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-image: radial-gradient(circle, #00ffa6, rgb(0,255,255), #ffffff);
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ========== Animated Borders ========== */
+@keyframes borderChase {
+  0%   { border-color: rgb(0,255,0); }
+  50%  { border-color: rgb(0,225,255); }
+  100% { border-color: rgb(0,255,0); }
+}
+.service-card .service-img {
+  border: 4px solid;
+  border-radius: 8px;
+  animation: borderChase 1.2s linear infinite;
+}
+.border-animation {
+  border: 5px solid;
+  border-radius: 12px;
+  animation: borderChase 2s linear infinite;
+}
+
+/* ========== Dark toggle badge position ========== */
+.dark { z-index: 1040; }
+
+/* ========== Small-screen tweaks ========== */
+@media (max-width: 575.98px) {
+  .mvtxt .h1 { font-size: 1.5rem; }
+  .mvp { font-size: 0.95rem; }
+}
